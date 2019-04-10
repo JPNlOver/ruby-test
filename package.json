@@ -29,15 +29,15 @@
     "chance": "^1.0.18",
     "got": "^9.6.0",
     "ms": "^2.1.1",
-    "mongoose": "^5.4.21",
+    "mongoose": "^5.5.0",
     "node-gd": "^1.5.4",
     "node-wget": "^0.4.3",
     "discord.js": "^11.4.2",
-    "node-fetch": "^2.3.0",
+    "snekfetch": "^4.0.0",
     "canvas": "^2.4.1"
   },
   "engines": {
-    "node": "11.x"
+    "node": "8.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"

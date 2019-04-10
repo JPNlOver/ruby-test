@@ -14,7 +14,6 @@ dependencies:
   moment-timezone: 0.5.23
   mongoose: 5.5.0
   ms: 2.1.1
-  node-fetch: 2.3.0
   node-gd: 1.5.4
   node-wget: 0.4.3
   npm: 6.9.0
@@ -23,6 +22,7 @@ dependencies:
   quick.db: 6.3.2
   quick.hook: 1.5.1
   request: 2.88.0
+  snekfetch: 4.0.4
   ytdl-core: 0.29.1
 packages:
   /@babel/polyfill/7.4.3:
@@ -1935,12 +1935,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
-  /node-fetch/2.3.0:
-    dev: false
-    engines:
-      node: 4.x || >=6.0.0
-    resolution:
-      integrity: sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
   /node-gd/1.5.4:
     dependencies:
       nan: 2.8.0
@@ -2659,6 +2653,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /sntp/2.1.0:
     dependencies:
       hoek: 4.2.1
@@ -3105,9 +3104,8 @@ specifiers:
   jimp: ^0.6.1
   moment: ^2.24.0
   moment-timezone: ^0.5.23
-  mongoose: ^5.4.21
+  mongoose: ^5.5.0
   ms: ^2.1.1
-  node-fetch: ^2.3.0
   node-gd: ^1.5.4
   node-wget: ^0.4.3
   npm: ^6.5.0
@@ -3116,4 +3114,5 @@ specifiers:
   quick.db: ^6.3.2
   quick.hook: ^1.5.1
   request: ^2.88.0
+  snekfetch: ^4.0.0
   ytdl-core: ^0.29.0

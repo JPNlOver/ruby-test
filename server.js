@@ -11,6 +11,7 @@ const act = "act_ruby"
 const moment = require ("moment")
 const palavroes = ["cu", "cú","foder", "puta", "caralho", "caraio", "fodido", "fodida", "puto", "pqp", "tnc", "vtnc", "vsf", "cabral", ];
 const Canvas = require("canvas")
+const SnekFetch = require('snekfetch')
 const snekfetch = require('snekfetch')
 var usar = "r!usar "
 const itens = ["vip1", "vip3", "vip7", "cor","tag1", "tag2", "tag3", "tag4", "tag5", "descricao"]
@@ -321,7 +322,7 @@ let teste = "";
     Canvas.registerFont( "/app/assets/fonts/bebas.ttf", {family: 'bebas'});
 
 // Get the icon in the form of a buffer
-	const { body: buffer } = await snekfetch(message.author.displayAvatarURL);
+	const { body: buffer } = await SnekFetch.get(message.author.displayAvatarURL);
 	// Wait for Canvas to load the image
 	const avatar = await Canvas.loadImage(buffer);
 	// Draw a shape onto the main canvas
@@ -341,7 +342,7 @@ let teste = "";
     else if(reputacao == 2) var reputation = rep.dois
     else if(reputacao == 3) var reputation = rep.tres
     else if(reputacao == 4) var reputation = rep.quatro
-    var { body: repicon } = await snekfetch(reputation);
+    var { body: repicon } = await snekfetch.get(reputation);
      
     
 	const repstatus = await Canvas.loadImage(repicon);  
@@ -353,26 +354,26 @@ let teste = "";
   if (tema === null) await db.set(`theme_${message.author.id}`, 1)
     if (message.author.id == "514906164287373313") tema = 2
   if(tema === 1) {
-  const { body: fundo } = await snekfetch(themeurl.vermelho);
+  const { body: fundo } = await snekfetch.get(themeurl.vermelho);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
     
   } else if(tema === 2) {
-  const { body: fundo } = await snekfetch(themeurl.roxo);
+  const { body: fundo } = await snekfetch.get(themeurl.roxo);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
   } else if(tema === 3) {
-  const { body: fundo } = await snekfetch(themeurl.reforged);
+  const { body: fundo } = await snekfetch.get(themeurl.reforged);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
   } else if(tema === 4) {
-  const { body: fundo } = await snekfetch(themeurl.premiumv1);
+  const { body: fundo } = await snekfetch.get(themeurl.premiumv1);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
@@ -500,7 +501,7 @@ let teste = "";
     Canvas.registerFont( "/app/assets/fonts/bebas.ttf", {family: 'bebas'});
 
 // Get the icon in the form of a buffer
-	const { body: buffer } = await snekfetch(message.mentions.users.first().displayAvatarURL);
+	const { body: buffer } = await SnekFetch.get(message.mentions.users.first().displayAvatarURL);
 	// Wait for Canvas to load the image
 	const avatar = await Canvas.loadImage(buffer);
 	// Draw a shape onto the main canvas
@@ -520,7 +521,7 @@ let teste = "";
     else if(reputacao == 2) var reputation = rep.dois
     else if(reputacao == 3) var reputation = rep.tres
     else if(reputacao == 4) var reputation = rep.quatro
-    var { body: repicon } = await snekfetch(reputation);
+    var { body: repicon } = await snekfetch.get(reputation);
      
     
 	const repstatus = await Canvas.loadImage(repicon);  
@@ -537,28 +538,28 @@ let teste = "";
   }
     if (message.mentions.users.first().id == "514906164287373313") tema = 2
   if(tema === 1) {
-  const { body: fundo } = await snekfetch(themeurl.vermelho);
+  const { body: fundo } = await snekfetch.get(themeurl.vermelho);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
     
   } else if(tema === 2) {
-  const { body: fundo } = await snekfetch(themeurl.roxo);
+  const { body: fundo } = await snekfetch.get(themeurl.roxo);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
     
   }else if(tema === 3) {
-  const { body: fundo } = await snekfetch(themeurl.reforged);
+  const { body: fundo } = await snekfetch.get(themeurl.reforged);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
   }
     else if(tema === 4) {
-  const { body: fundo } = await snekfetch(themeurl.premiumv1);
+  const { body: fundo } = await snekfetch.get(themeurl.premiumv1);
   const background = await Canvas.loadImage(fundo);  
 	ctx.drawImage(background, 0, 0, 943, 459);
 	ctx.strokeStyle = '#74037b';
