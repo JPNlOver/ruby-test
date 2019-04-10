@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const fs = require('fs')
-var config = JSON.parse(fs.readFileSync('./botsettings.json', 'utf-8'));
 
 
 
@@ -46,7 +45,7 @@ client.on('message', async message => {
   
 })
 
-client.login(config.token);
+client.login(process.env.TOKEN);
 
 module.exports.help = {
     name: "icon",
