@@ -3,8 +3,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const fs = require('fs')
+var config = JSON.parse(fs.readFileSync('./botsettings.json', 'utf-8'));
 
-const token = process.env.TOKEN;
+
 
 
 client.on('ready', () => {
